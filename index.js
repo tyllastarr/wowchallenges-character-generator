@@ -3,7 +3,7 @@ const config = require("./config.json");
 const discord = require("discord.js");
 
 // Create the chatbot interface
-const client = new discord.client();
+const client = new discord.Client();
 
 // Log a ready message when ready
 client.on("ready", () => {
@@ -15,5 +15,5 @@ client.login(config.token);
 
 // Listen for a message
 client.on("message", message => {
-    message.reply(`message received.`);
+//    message.reply(`message received.`);
 });
