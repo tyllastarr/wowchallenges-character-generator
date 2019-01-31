@@ -1,4 +1,14 @@
-﻿,,0,1,2,3,4,5,6
-,,Druid,Mage,Priest,Rogue,Shaman,Warlock,Warrior
-0,Tauren,Yes,No,Yes,No,Yes,No,Yes
-1,Dwarf,No,Yes,Yes,Yes,Yes,Yes,Yes
+﻿,,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+,,Human,Dwarf,Gnome,Night Elf,Draenei,Worgen,Void Elf,Lightforged Draenei,Dark Iron Dwarf,Pandaren,Orc,Troll,Tauren,Undead,Blood Elf,Goblin,Nightborne,Highmountain Tauren,Mag'har Orc
+0,Death Knight,Yes,Yes,Yes,Yes,Yes,Yes,No,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,No,No,No
+1,Demon Hunter,No,No,No,Yes,No,No,No,No,No,No,No,No,No,No,Yes,No,No,No,No
+2,Druid,No,No,No,Yes,No,Yes,No,No,No,No,No,Yes,Yes,No,No,No,No,Yes,No
+3,Hunter,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+4,Mage,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,No,Yes
+5,Monk,Yes,Yes,Yes,Yes,Yes,No,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes
+6,Paladin,Yes,Yes,No,No,Yes,No,No,Yes,Yes,No,No,No,Yes,No,Yes,No,No,No,No
+7,Priest,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes
+8,Rogue,Yes,Yes,Yes,Yes,No,Yes,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,No,Yes
+9,Shaman,No,Yes,No,No,Yes,No,No,No,Yes,Yes,Yes,Yes,Yes,No,No,Yes,No,Yes,Yes
+10,Warlock,Yes,Yes,Yes,No,No,Yes,Yes,No,Yes,No,Yes,Yes,No,Yes,Yes,Yes,Yes,No,No
+11,Warrior,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
