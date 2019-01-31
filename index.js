@@ -27,48 +27,35 @@ function contestRoll(factionInput) {
 	let faction, race, charClass, gender, spec, specs;
 	switch(factionInput) {
 	case "Alliance":
+		faction = "Alliance";
+		race = "Dwarf"; // Dwarf is the only available Alliance race for this contest.
 		do {
 			charClass = contestClasses[random(0, 6)];
 		} while(charClass == "Druid"); // Druid is only available for Horde in this contest.
-		faction = "Alliance";
-		race = "Dwarf"; // Dwarf is the only available Alliance race for this contest.
 		break;
 	case "Horde":
+		faction = "Horde";
+		race = "Tauren"; // Tauren is the only available Horde race for this contest.
 		do {
 			charClass = contestClasses[random(0, 6)];
 		} while(charClass == "Mage" || charClass == "Rogue" || charClass == "Warlock"); // Mage, rogue, and warlock are only available for Alliance in this contest.
-		faction = "Horde";
-		race = "Tauren"; // Tauren is the only available Horde race for this contest.
 		break;
 	case "Both":
-		charClass = contestClasses[random(0, 6)];
-		switch(charClass) {
-		// Alliance only classes
-		case "Mage":
-		case "Rogue":
-		case "Warlock":
-			faction = "Alliance";
-			race = "Dwarf";
-			break;
-			// Horde only class
-		case "Druid":
+		race = contestRaces[random(0, 1)];
+		switch(race) {
+		case "Tauren":
 			faction = "Horde";
-			race = "Tauren";
+			do {
+				charClass = contestClasses[random(0, 6)];
+			} while(charClass == "Mage" || charClass == "Rogue" || charClass == "Warlock"); // Mage, rogue, and warlock are only available for Alliance in this contest.
 			break;
-			// Others
-		default:
-			race = contestRaces[random(0, 1)];
-			switch(race) {
-			case "Tauren":
-				faction = "Horde";
-				break;
-			case "Dwarf":
-				faction = "Alliance";
-				break;
-			}
+		case "Dwarf":
+			faction = "Alliance";
+			do {
+				charClass = contestClasses[random(0, 6)];
+			} while(charClass == "Druid"); // Druid is only available for Horde in this contest.
 			break;
 		}
-		break;
 	}
     
 	gender = genders[random(0, 1)];
