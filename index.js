@@ -206,43 +206,45 @@ client.login(config.token);
 
 // Listen for a message
 client.on("message", message => {
-	if(message.content.startsWith(`${config.prefix}contestroll`)) {
-		disc = message;
-       
-		if(message.content == `${config.prefix}contestroll`) { // No params
-			contestRoll("Both");
-		} else {
-			let factionParam = message.content.slice(13);
-			switch(factionParam) {
-			case "alliance":
-				contestRoll("Alliance");
-				break;
-			case "horde":
-				contestRoll("Horde");
-				break;
-			default: // If it isn't valid, ignore it and treat as no param
+	if(message.channel.name === config.channel) {
+		if(message.content.startsWith(`${config.prefix}contestroll`)) {
+			disc = message;
+		
+			if(message.content == `${config.prefix}contestroll`) { // No params
 				contestRoll("Both");
-				break;
+			} else {
+				let factionParam = message.content.slice(13);
+				switch(factionParam) {
+				case "alliance":
+					contestRoll("Alliance");
+					break;
+				case "horde":
+					contestRoll("Horde");
+					break;
+				default: // If it isn't valid, ignore it and treat as no param
+					contestRoll("Both");
+					break;
+				}
 			}
 		}
-	}
-	if(message.content.startsWith(`${config.prefix}roll`)) {
-		disc = message;
-       
-		if(message.content == `${config.prefix}roll`) { // No params
-			roll("Both");
-		} else {
-			let factionParam = message.content.slice(6);
-			switch(factionParam) {
-			case "alliance":
-				roll("Alliance");
-				break;
-			case "horde":
-				roll("Horde");
-				break;
-			default: // If it isn't valid, ignore it and treat as no param
+		if(message.content.startsWith(`${config.prefix}roll`)) {
+			disc = message;
+		
+			if(message.content == `${config.prefix}roll`) { // No params
 				roll("Both");
-				break;
+			} else {
+				let factionParam = message.content.slice(6);
+				switch(factionParam) {
+				case "alliance":
+					roll("Alliance");
+					break;
+				case "horde":
+					roll("Horde");
+					break;
+				default: // If it isn't valid, ignore it and treat as no param
+					roll("Both");
+					break;
+				}
 			}
 		}
 	}
