@@ -14,7 +14,7 @@ const contestCombinations = [
 ];
 
 // Initialize the arrays for the non-contest roller
-const races = ["Human", "Dwarf", "Gnome", "Night Elf", "Draenei", "Worgen", "Void Elf", "Lightforged Draenei", "Dark Iron Dwarf", "Pandaren", "Orc", "Troll", "Tauren", "Undead", "Blood Elf", "Goblin", "Nightborne", "Highmountain Tauren", "Mag'har Orc"];
+const races = ["Human", "Dwarf", "Gnome", "Night Elf", "Draenei", "Worgen", "Void Elf", "Lightforged Draenei", "Dark Iron Dwarf", "Kul Tiran Human", "Pandaren", "Orc", "Troll", "Tauren", "Undead", "Blood Elf", "Goblin", "Nightborne", "Highmountain Tauren", "Mag'har Orc", "Zandalari Troll"];
 const classes = ["Death Knight", "Demon Hunter", "Druid", "Hunter", "Mage", "Monk", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"];
 const combinations = [
 	[true, false, false, true, true, true, true, true, true, false, true, true],
@@ -26,6 +26,7 @@ const combinations = [
 	[false, false, false, true, true, true, false, true, true, false, true, true],
 	[false, false, false, true, true, false, true, true, false, false, false, true],
 	[false, false, false, true, true, true, true, true, true, true, true, true],
+	[false, false, true, true, true, true, false, true, true, true, false, true],
 	[false, false, false, true, true, true, false, true, true, true, false, true],
 	[true, false, false, true, true, true, false, false, true, true, true, true],
 	[true, false, true, true, true, true, false, true, true, true, true, true],
@@ -35,7 +36,8 @@ const combinations = [
 	[true, false, false, true, true, false, false, true, true, true, true, true],
 	[false, false, false, true, true, true, false, true, true, false, true, true],
 	[false, false, true, true, false, true, false, false, false, true, false, true],
-	[false, false, false, true, true, true, false, true, true, true, false, true]
+	[false, false, false, true, true, true, false, true, true, true, false, true],
+	[false, false, true, true, true, true, true, true, true, true, false, true]
 ];
 
 // Initialize the general arrays
@@ -122,21 +124,21 @@ function roll(factionInput) {
 
 	switch(factionInput) {
 	case "Alliance":
-		raceIndex = random(0, 9);
+		raceIndex = random(0, 10);
 		race = races[raceIndex];
 		faction = "Alliance";
 		break;
 	case "Horde":
-		raceIndex = random(9, 18);
+		raceIndex = random(10, 21);
 		race = races[raceIndex];
 		faction = "Horde";
 		break;
 	case "Both":
-		raceIndex = random(0, 18);
+		raceIndex = random(0, 21);
 		race = races[raceIndex];
-		if(raceIndex < 9) {
+		if(raceIndex < 10) {
 			faction = "Alliance";
-		} else if(raceIndex > 9) {
+		} else if(raceIndex > 10) {
 			faction = "Horde";
 		} else {
 			faction = factions[random(0, 1)];
