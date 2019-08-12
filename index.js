@@ -6,12 +6,14 @@ const discord = require("discord.js");
 const client = new discord.Client();
 
 // Initialize the arrays for the contest roller
-const contestRaces = ["Tauren", "Dwarf"];
-const contestClasses = ["Druid", "Mage", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"];
-const contestCombinations = [
-	[true, false, true, false, true, false, true],
-	[false, true, true, true, true, true, true]
-];
+const contestRaces = ["Troll", "Undead", "Human", "Dwarf"];
+/* There is only one class, so the class and combination arrays are not needed.
+ * const contestClasses = ["Druid", "Mage", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"];
+ * const contestCombinations = [
+ *	[true, false, true, false, true, false, true],
+ *	[false, true, true, true, true, true, true]
+ *];
+ */
 
 // Initialize the arrays for the non-contest roller
 const races = ["Human", "Dwarf", "Gnome", "Night Elf", "Draenei", "Worgen", "Void Elf", "Lightforged Draenei", "Dark Iron Dwarf", "Kul Tiran Human", "Pandaren", "Orc", "Troll", "Tauren", "Undead", "Blood Elf", "Goblin", "Nightborne", "Highmountain Tauren", "Mag'har Orc", "Zandalari Troll"];
@@ -60,59 +62,66 @@ function contestRoll(factionInput) {
 
 	switch(factionInput) {
 	case "Alliance":
-		raceIndex = 1;
-		race = "Dwarf"; // Dwarf is the only available Alliance race for this contest.
+		raceIndex = random(2, 3);
+		race = contestRaces[raceIndex];
 		faction = "Alliance";
 		break;
 	case "Horde":
-		raceIndex = 0;
-		race = "Tauren"; // Tauren is the only available Horde race for this contest.
+		raceIndex = random(0, 1);
+		race = contestRaces[raceIndex];
 		faction = "Horde";
 		break;
 	case "Both":
-		raceIndex = random(0, 1);
+		raceIndex = random(0, 3);
 		race = contestRaces[raceIndex];
 		switch(race) {
-		case "Tauren":
+		case "Troll":
+		case "Undead":
 			faction = "Horde";
 			break;
+		case "Human":
 		case "Dwarf":
 			faction = "Alliance";
 			break;
 		}
 	}
 
-	do {
-		classIndex = random(0, 6);
-	} while(!contestCombinations[raceIndex][classIndex]);
-	charClass = contestClasses[classIndex];
-    
+/* Since there's only one class, rolling classes isn't needed.
+ *	do {
+ *		classIndex = random(0, 6);
+ *	} while(!contestCombinations[raceIndex][classIndex]);
+ *	charClass = contestClasses[classIndex];
+ */   
 	gender = genders[random(0, 1)];
 
-	switch(charClass)
-	{
-	case "Druid":
-		specs = ["Balance", "Feral", "Guardian", "Restoration"];
-		break;
-	case "Mage":
-		specs = ["Arcane", "Fire", "Frost"];
-		break;
-	case "Priest":
+/* Since there's only one class, no need for the switch statement to pick specs.
+ *	switch(charClass)
+ *	{
+ *	case "Druid":
+ *		specs = ["Balance", "Feral", "Guardian", "Restoration"];
+ *		break;
+ *	case "Mage":
+ *		specs = ["Arcane", "Fire", "Frost"];
+ *		break;
+ *	case "Priest":
+ */
 		specs = ["Discipline", "Holy", "Shadow"];
-		break;
-	case "Rogue":
-		specs = ["Assassination", "Outlaw", "Subtlety"];
-		break;
-	case "Shaman":
-		specs = ["Elemental", "Enhancement", "Restoration"];
-		break;
-	case "Warlock":
-		specs = ["Affliction", "Demonology", "Destruction"];
-		break;
-	case "Warrior":
-		specs = ["Arms", "Fury", "Protection"];
-		break;
-	}
+/* Since there's only one class, no need for the switch statement to pick specs.
+ *		break;
+ *	case "Rogue":
+ *		specs = ["Assassination", "Outlaw", "Subtlety"];
+ *		break;
+ *	case "Shaman":
+ *		specs = ["Elemental", "Enhancement", "Restoration"];
+ *		break;
+ *	case "Warlock":
+ *		specs = ["Affliction", "Demonology", "Destruction"];
+ *		break;
+ *	case "Warrior":
+ *		specs = ["Arms", "Fury", "Protection"];
+ *		break;
+ *	}
+ */
 	spec = specs[random(0, specs.length - 1)];
     
 	disc.reply(`you rolled a ${disc.guild.emojis.find(emoji => emoji.name === faction.toLowerCase())} ${gender} ${race} ${spec} ${charClass} ${disc.guild.emojis.find(emoji => emoji.name === faction.toLowerCase())}`);
