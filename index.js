@@ -85,8 +85,8 @@ function contestRoll(factionInput) {
 			break;
 		}
 	}
-	console.log("Race is " + race + " (" + raceIndex + ")");
-	console.log("Faction is " + faction);
+//	console.log("Race is " + race + " (" + raceIndex + ")");
+//	console.log("Faction is " + faction);
 
 /* Since there's only one class, rolling classes isn't needed.
  *	do {
@@ -97,7 +97,7 @@ function contestRoll(factionInput) {
 	charClass = "Priest";
 	genderIndex = random(0, 1);
 	gender = genders[genderIndex];
-	console.log("Gender is " + gender + " (" + genderIndex + ")");
+//	console.log("Gender is " + gender + " (" + genderIndex + ")");
 
 /* Since there's only one class, no need for the switch statement to pick specs.
  *	switch(charClass)
@@ -129,7 +129,7 @@ function contestRoll(factionInput) {
  */
 	specIndex = random(0, specs.length - 1);
 	spec = specs[specIndex];
-	console.log("Spec is " + spec + " (" + specIndex + ")");
+//	console.log("Spec is " + spec + " (" + specIndex + ")");
     
 	disc.reply(`you rolled a ${disc.guild.emojis.find(emoji => emoji.name === faction.toLowerCase())} ${gender} ${race} ${spec} ${charClass} ${disc.guild.emojis.find(emoji => emoji.name === faction.toLowerCase())}`);
 }
