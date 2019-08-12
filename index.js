@@ -94,6 +94,7 @@ function contestRoll(factionInput) {
  *	} while(!contestCombinations[raceIndex][classIndex]);
  *	charClass = contestClasses[classIndex];
  */   
+	charClass = "Priest";
 	genderIndex = random(0, 1);
 	gender = genders[genderIndex];
 	console.log("Gender is " + gender + " (" + genderIndex + ")");
