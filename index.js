@@ -58,7 +58,7 @@ function random(min, max) {
 
 // Generate character for the contest
 function contestRoll(factionInput) {
-	let faction, race, raceIndex, charClass, classIndex, gender, spec, specs;
+	let faction, race, raceIndex, charClass,/* classIndex,*/ gender, genderIndex, spec, specIndex, specs;
 
 	switch(factionInput) {
 	case "Alliance":
@@ -85,6 +85,8 @@ function contestRoll(factionInput) {
 			break;
 		}
 	}
+	console.log("Race is " + race + " (" + raceIndex + ")");
+	console.log("Faction is " + faction);
 
 /* Since there's only one class, rolling classes isn't needed.
  *	do {
@@ -92,7 +94,9 @@ function contestRoll(factionInput) {
  *	} while(!contestCombinations[raceIndex][classIndex]);
  *	charClass = contestClasses[classIndex];
  */   
-	gender = genders[random(0, 1)];
+	genderIndex = random(0, 1);
+	gender = genders[genderIndex];
+	console.log("Gender is " + gender + " (" + genderIndex + ")");
 
 /* Since there's only one class, no need for the switch statement to pick specs.
  *	switch(charClass)
@@ -122,7 +126,9 @@ function contestRoll(factionInput) {
  *		break;
  *	}
  */
-	spec = specs[random(0, specs.length - 1)];
+	specIndex = random(0, specs.length - 1);
+	spec = specs[specIndex];
+	console.log("Spec is " + spec + " (" + specIndex + ")");
     
 	disc.reply(`you rolled a ${disc.guild.emojis.find(emoji => emoji.name === faction.toLowerCase())} ${gender} ${race} ${spec} ${charClass} ${disc.guild.emojis.find(emoji => emoji.name === faction.toLowerCase())}`);
 }
