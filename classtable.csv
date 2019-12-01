@@ -1,14 +1,14 @@
 ﻿,,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,19,20,21
 ,,Human,Dwarf,Gnome,Night Elf,Draenei,Worgen,Void Elf,Lightforged Draenei,Dark Iron Dwarf,Kul Tiran Human,Pandaren,Orc,Troll,Tauren,Undead,Blood Elf,Goblin,Nightborne,Highmountain Tauren,Mag'har Orc,Zandalari Troll
-0,Death Knight,Yes,Yes,Yes,Yes,Yes,Yes,No,No,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,No,No,No,No
-1,Demon Hunter,No,No,No,Yes,No,No,No,No,No,No,No,No,No,No,No,Yes,No,No,No,No,No
-2,Druid,No,No,No,Yes,No,Yes,No,No,No,Yes,No,No,Yes,Yes,No,No,No,No,Yes,No,Yes
-3,Hunter,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
-4,Mage,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes
-5,Monk,Yes,Yes,Yes,Yes,Yes,No,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes
-6,Paladin,Yes,Yes,No,No,Yes,No,No,Yes,Yes,No,No,No,No,Yes,No,Yes,No,No,No,No,Yes
-7,Priest,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes
-8,Rogue,Yes,Yes,Yes,Yes,No,Yes,Yes,No,Yes,Yes,Yes,Yes,Yes,No,Yes,Yes,Yes,Yes,No,Yes,Yes
-9,Shaman,No,Yes,No,No,Yes,No,No,No,Yes,Yes,Yes,Yes,Yes,Yes,No,No,Yes,No,Yes,Yes,Yes
-10,Warlock,Yes,Yes,Yes,No,No,Yes,Yes,No,Yes,No,No,Yes,Yes,No,Yes,Yes,Yes,Yes,No,No,No
-11,Warrior,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+0,Death Knight,true,true,true,true,true,true,false,false,false,false,false,true,true,true,true,true,true,false,false,false,false
+1,Demon Hunter,false,false,false,true,false,false,false,false,false,false,false,false,false,false,false,true,false,false,false,false,false
+2,Druid,false,false,false,true,false,true,false,false,false,true,false,false,true,true,false,false,false,false,true,false,true
+3,Hunter,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true
+4,Mage,true,true,true,true,true,true,true,true,true,true,true,true,true,false,true,true,true,true,false,true,true
+5,Monk,true,true,true,true,true,false,true,false,true,true,true,true,true,true,true,true,false,true,true,true,true
+6,Paladin,true,true,false,false,true,false,false,true,true,false,false,false,false,true,false,true,false,false,false,false,true
+7,Priest,true,true,true,true,true,true,true,true,true,true,true,false,true,true,true,true,true,true,false,true,true
+8,Rogue,true,true,true,true,false,true,true,false,true,true,true,true,true,false,true,true,true,true,false,true,true
+9,Shaman,false,true,false,false,true,false,false,false,true,true,true,true,true,true,false,false,true,false,true,true,true
+10,Warlock,true,true,true,false,false,true,true,false,true,false,false,true,true,false,true,true,true,true,false,false,false
+11,Warrior,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true

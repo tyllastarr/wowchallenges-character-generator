@@ -1,9 +1,11 @@
-﻿,,0,1
-,,Tauren,Dwarf
-0,Druid,Yes,No
-1,Mage,No,Yes
-2,Priest,Yes,Yes
-3,Rogue,No,Yes
-4,Shaman,Yes,Yes
-5,Warlock,No,Yes
-6,Warrior,Yes,Yes
+﻿,,0,1,2,3
+,,Gnome,Night Elf,Blood Elf,Goblin
+0,Druid,false,true,false,false
+1,Mage,true,true,true,true
+2,Monk,true,true,true,false
+3,Paladin,false,false,true,false
+4,Priest,true,true,true,true
+5,Rogue,true,true,true,true
+6,Shaman,false,false,false,true
+7,Warlock,true,false,true,true
+8,Warrior,true,true,true,true
