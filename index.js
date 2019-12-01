@@ -1,6 +1,7 @@
 // Includes
 const config = require("./config.json");
 const discord = require("discord.js");
+const noncontest = require("./noncontest.json");
 
 // Create the chatbot interface
 const client = new discord.Client();
@@ -16,7 +17,7 @@ const contestRaces = ["Troll", "Undead", "Human", "Dwarf"];
  */
 
 // Initialize the arrays for the non-contest roller
-const races = ["Human", "Dwarf", "Gnome", "Night Elf", "Draenei", "Worgen", "Void Elf", "Lightforged Draenei", "Dark Iron Dwarf", "Kul Tiran Human", "Pandaren", "Orc", "Troll", "Tauren", "Undead", "Blood Elf", "Goblin", "Nightborne", "Highmountain Tauren", "Mag'har Orc", "Zandalari Troll"];
+/*const races = ["Human", "Dwarf", "Gnome", "Night Elf", "Draenei", "Worgen", "Void Elf", "Lightforged Draenei", "Dark Iron Dwarf", "Kul Tiran Human", "Pandaren", "Orc", "Troll", "Tauren", "Undead", "Blood Elf", "Goblin", "Nightborne", "Highmountain Tauren", "Mag'har Orc", "Zandalari Troll"];
 const classes = ["Death Knight", "Demon Hunter", "Druid", "Hunter", "Mage", "Monk", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"];
 const combinations = [
 	[true, false, false, true, true, true, true, true, true, false, true, true],
@@ -44,7 +45,7 @@ const combinations = [
 
 // Initialize the general arrays
 const genders = ["Male", "Female"];
-const factions = ["Alliance", "Horde"];
+const factions = ["Alliance", "Horde"];*/
 
 // Other variables
 var disc;
@@ -141,23 +142,23 @@ function roll(factionInput) {
 	switch(factionInput) {
 	case "Alliance":
 		raceIndex = random(0, 10);
-		race = races[raceIndex];
+		race = noncontest.races[raceIndex];
 		faction = "Alliance";
 		break;
 	case "Horde":
 		raceIndex = random(10, 21);
-		race = races[raceIndex];
+		race = noncontest.races[raceIndex];
 		faction = "Horde";
 		break;
 	case "Both":
 		raceIndex = random(0, 21);
-		race = races[raceIndex];
+		race = noncontest.races[raceIndex];
 		if(raceIndex < 10) {
 			faction = "Alliance";
 		} else if(raceIndex > 10) {
 			faction = "Horde";
 		} else {
-			faction = factions[random(0, 1)];
+			faction = noncontest.factions[random(0, 1)];
 		}
 		break;
 	}
@@ -165,9 +166,9 @@ function roll(factionInput) {
 	do {
 		classIndex = random(0, 11);
 	} while(!combinations[raceIndex][classIndex]);
-	charClass = classes[classIndex];
+	charClass = noncontest.classes[classIndex];
 	
-	gender = genders[random(0, 1)];
+	gender = noncontest.genders[random(0, 1)];
 
 	switch(charClass)
 	{
@@ -208,7 +209,7 @@ function roll(factionInput) {
 		specs = ["Arms", "Fury", "Protection"];
 		break;
 	}
-	spec = specs[random(0, specs.length - 1)];
+	spec = noncontest.specs[random(0, specs.length - 1)];
     
 	disc.reply(`you rolled a ${disc.guild.emojis.find(emoji => emoji.name === faction.toLowerCase())} ${gender} ${race} ${spec} ${charClass} ${disc.guild.emojis.find(emoji => emoji.name === faction.toLowerCase())}`);
 }
