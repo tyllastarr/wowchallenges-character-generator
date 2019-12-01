@@ -16,37 +16,6 @@ const contestRaces = ["Troll", "Undead", "Human", "Dwarf"];
  *];
  */
 
-// Initialize the arrays for the non-contest roller
-/*const races = ["Human", "Dwarf", "Gnome", "Night Elf", "Draenei", "Worgen", "Void Elf", "Lightforged Draenei", "Dark Iron Dwarf", "Kul Tiran Human", "Pandaren", "Orc", "Troll", "Tauren", "Undead", "Blood Elf", "Goblin", "Nightborne", "Highmountain Tauren", "Mag'har Orc", "Zandalari Troll"];
-const classes = ["Death Knight", "Demon Hunter", "Druid", "Hunter", "Mage", "Monk", "Paladin", "Priest", "Rogue", "Shaman", "Warlock", "Warrior"];
-const combinations = [
-	[true, false, false, true, true, true, true, true, true, false, true, true],
-	[true, false, false, true, true, true, true, true, true, true, true, true],
-	[true, false, false, true, true, true, false, true, true, false, true, true],
-	[true, true, true, true, true, true, false, true, true, false, false, true],
-	[true, false, false, true, true, true, true, true, false, true, false, true],
-	[true, false, true, true, true, false, false, true, true, false, true, true],
-	[false, false, false, true, true, true, false, true, true, false, true, true],
-	[false, false, false, true, true, false, true, true, false, false, false, true],
-	[false, false, false, true, true, true, true, true, true, true, true, true],
-	[false, false, true, true, true, true, false, true, true, true, false, true],
-	[false, false, false, true, true, true, false, true, true, true, false, true],
-	[true, false, false, true, true, true, false, false, true, true, true, true],
-	[true, false, true, true, true, true, false, true, true, true, true, true],
-	[true, false, true, true, false, true, true, true, false, true, false, true],
-	[true, false, false, true, true, true, false, true, true, false, true, true],
-	[true, true, false, true, true, true, true, true, true, false, true, true],
-	[true, false, false, true, true, false, false, true, true, true, true, true],
-	[false, false, false, true, true, true, false, true, true, false, true, true],
-	[false, false, true, true, false, true, false, false, false, true, false, true],
-	[false, false, false, true, true, true, false, true, true, true, false, true],
-	[false, false, true, true, true, true, true, true, true, true, false, true]
-];
-
-// Initialize the general arrays
-const genders = ["Male", "Female"];
-const factions = ["Alliance", "Horde"];*/
-
 // Other variables
 var disc;
 
@@ -165,51 +134,13 @@ function roll(factionInput) {
 
 	do {
 		classIndex = random(0, 11);
-	} while(!combinations[raceIndex][classIndex]);
+	} while(!noncontest.combinations[raceIndex][classIndex]);
 	charClass = noncontest.classes[classIndex];
 	
 	gender = noncontest.genders[random(0, 1)];
 
-	switch(charClass)
-	{
-	case "Death Knight":
-		specs = ["Blood", "Frost", "Unholy"];
-		break;
-	case "Demon Hunter":
-		specs = ["Havoc", "Vengeance"];
-		break;
-	case "Druid":
-		specs = ["Balance", "Feral", "Guardian", "Restoration"];
-		break;
-	case "Hunter":
-		specs = ["Beast Mastery", "Marksmanship", "Survival"];
-		break;
-	case "Mage":
-		specs = ["Arcane", "Fire", "Frost"];
-		break;
-	case "Monk":
-		specs = ["Brewmaster", "Mistweaver", "Windwalker"];
-		break;
-	case "Paladin":
-		specs = ["Holy", "Protection", "Retribution"];
-		break;
-	case "Priest":
-		specs = ["Discipline", "Holy", "Shadow"];
-		break;
-	case "Rogue":
-		specs = ["Assassination", "Outlaw", "Subtlety"];
-		break;
-	case "Shaman":
-		specs = ["Elemental", "Enhancement", "Restoration"];
-		break;
-	case "Warlock":
-		specs = ["Affliction", "Demonology", "Destruction"];
-		break;
-	case "Warrior":
-		specs = ["Arms", "Fury", "Protection"];
-		break;
-	}
-	spec = noncontest.specs[random(0, specs.length - 1)];
+	specs = noncontest.specs[classIndex];
+	spec = specs[random(0, specs.length - 1)];
     
 	disc.reply(`you rolled a ${disc.guild.emojis.find(emoji => emoji.name === faction.toLowerCase())} ${gender} ${race} ${spec} ${charClass} ${disc.guild.emojis.find(emoji => emoji.name === faction.toLowerCase())}`);
 }

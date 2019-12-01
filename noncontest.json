@@ -241,6 +241,20 @@
     ],
     [false, false, true, true, true, true, true, true, true, true, false, true]
   ],
+  "specs": [
+    ["Blood", "Frost", "Unholy"],
+    ["Havoc", "Vengeance"],
+    ["Balance", "Feral", "Guardian", "Restoration"],
+    ["Beast Mastery", "Marksmanship", "Survival"],
+    ["Arcane", "Fire", "Frost"],
+    ["Brewmaster", "Mistweaver", "Windwalker"],
+    ["Holy", "Protection", "Retribution"],
+    ["Discipline", "Holy", "Shadow"],
+    ["Assassination", "Outlaw", "Subtlety"],
+    ["Elemental", "Enhancement", "Restoration"],
+    ["Affliction", "Demonology", "Destruction"],
+    ["Arms", "Fury", "Protection"]
+  ],
   "genders": ["Male", "Female"],
   "factions": ["Alliance", "Horde"]
 }
