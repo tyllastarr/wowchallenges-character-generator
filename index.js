@@ -28,12 +28,12 @@ function contestRoll(factionInput) {
       faction = "Alliance";
       break;
     case "Horde":
-      raceIndex = random(2, 3);
+      raceIndex = random(2, 5);
       race = contest.races[raceIndex];
       faction = "Horde";
       break;
     case "Both":
-      raceIndex = random(0, 3);
+      raceIndex = random(0, 5);
       race = contest.races[raceIndex];
       if (raceIndex < 2) {
         faction = "Alliance";
